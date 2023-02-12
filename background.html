@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+        .container-fluid {
+            padding: 0px !important;
+            
+        }
+
+
+        .col-md-12 {
+            //border: 3px solid black;
+            padding: 0px !important;
+            width:100%; 
+            height:100%; 
+        }
+
+            .col-md-12 video {
+                width:100%; 
+                height:100%; 
+                z-index:-100;
+               
+            }
+
+            .video-background{
+                position:relative;
+            }
+
+        .text-on-video-background {
+            position: absolute;
+            top: 35%;
+            left: 25%;
+            background: white;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom:20px;
+        }
+
+            button{
+                padding:10px 20px;
+                background:black;
+                color:white;
+                border-radius:4px;
+            }
+
+        @media only screen and (max-width:500px) {
+
+            .col-md-12 {
+                height: 100vh;
+                width: 100%;
+            }
+
+                .col-md-12 video {
+                    height: 100%;
+                    width: 100%;
+                    //border: 3px solid red;
+                    display: block;
+                }
+
+
+
+            .myvideo {
+                //background-color: red;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                z-index: -100;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <div class="row video-background">
+                <video autoplay muted loop class="myvideo">
+                    <source src="ripples.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-on-video-background">
+                    <h2>Test header</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <button>Buy Now</button>
+                    <button>Call Us</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

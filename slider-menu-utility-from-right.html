@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+
+        .navbar {
+            border: 1px solid black;
+            margin-top: 10px;
+            height: 60px;
+        }
+
+        .menu-icon {
+            float: right !important;
+            font-size: 30px;
+            right: 5px;
+            top: 13px;
+            cursor: pointer;
+        }
+
+        .menu {
+            height: 100vh;
+            border: 1px solid black;
+            float: right;
+            transform: translateX(110%);
+        }
+
+        .move-menu {
+            transform: translateX(0%);
+            transition: 0.4s all;
+        }
+
+        nav{
+            //border:1px solid black;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            position:relative;
+        }
+
+        .x{
+            position:absolute;
+            top:0px;
+            right:0px;
+            cursor:pointer; 
+        }
+
+        nav ul li{
+            font-size:20px;
+            cursor:pointer; 
+            text-transform:capitalize;
+            padding:20px 0px;
+        }
+
+        /* class for hiding menu (when close button (X) is clicked) */
+
+        .hide{
+            display:none; 
+        }
+
+        @media only screen and (max-width:500px) {
+            .menu {
+                height: 100vh;
+                border: 1px solid black;
+                float: right;
+                transform: translateX(150%);
+                width: 400px; /* this had to be given to col-md-4 to make the dynamic menu width large in mobile device */
+            }
+
+            .move-menu {
+                transform: translateX(0%);
+                transition: 0.4s all;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="col-md-12 navbar">
+            <span class="glyphicon glyphicon-menu-hamburger menu-icon"></span>
+        </div>
+        <div class="col-md-4 menu ">
+            <nav>
+                <span style="font-size:40px;" class="x">X</span>
+                <ul>
+                    <li>HOME</li>
+                    <li>ABOUT</li>
+                    <li>SERVICES</li>
+                    <li>VERTICALS</li>
+                    <li>PORTFOLIO</li>
+                    <li>CONTACT</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.menu-icon').addEventListener('click', function () {
+
+            document.querySelector('.menu').classList.remove('hide');
+            //alert('clicked')
+            //document.querySelector('.menu').style.transform = "translateX(-110%)";
+            document.querySelector('.menu').classList.toggle('move-menu');
+        })
+
+        document.querySelector('.x').addEventListener('click', function () {
+            document.querySelector('.menu').classList.add('hide');
+        })
+    </script>
+</body>
+</html>

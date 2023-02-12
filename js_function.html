@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="number"  class="num1"/>
+    <input type="number" class="num2"/>
+    <button class="btn" onclick="add()">Add</button>
+    <button class="reset">Reset</button>
+
+    <script>
+        function add() {
+            //alert('hello world')
+            var num1 = Number(document.querySelector('.num1').value); 
+            var num2 = Number(document.querySelector('.num2').value); 
+            //alert(num1+num2)
+            alert(`Answer is ${num1+num2}` );
+        }
+
+        /* introduct reset functionality too....
+        document.querySelector('.reset').addEventListener('click', function () {
+            document.querySelector('.num1').value = '';
+            document.querySelector('.num2').value = '';
+            window.location.reload(); 
+        })
+        */
+    </script>
+</body>
+</html>
